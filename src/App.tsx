@@ -46,7 +46,7 @@ function App() {
           </motion.p>
           
           <motion.div className="flex-col items-center gap-4" variants={itemVariants}>
-            <a href="https://chromewebstore.google.com/detail/polydiscover/agebcajnepddkkdigcloncjdfnacmaji" className="cta-button btn btn-primary" onClick={(e) => e.preventDefault()}>
+            <a href="https://chromewebstore.google.com/detail/polydiscover/agebcajnepddkkdigcloncjdfnacmaji" className="cta-button btn btn-primary">
               Add to Chrome - It's Free!
             </a>
           </motion.div>
