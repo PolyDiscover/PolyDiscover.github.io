@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
+import { AnimatedGlobe } from './components/AnimatedGlobe';
 
 const faqData = [
   {
@@ -268,6 +269,35 @@ function App() {
             </motion.div>
           </div>
         </motion.section>
+
+        {/* Edge Network Section */}
+        <section className="edge-section">
+          <motion.div
+            className="container edge-content"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={containerVariants}
+          >
+            <motion.div className="edge-header" variants={itemVariants}>
+              <h2>Global edge delivery</h2>
+              <p>
+                PolyDiscover leverages Cloudflare's worldwide network to serve market data from the edge—delivering real-time Polymarket intelligence with sub-100ms latency, anywhere in the world.
+              </p>
+              <div className="edge-cta">
+                <span className="edge-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                  Powered by Cloudflare Workers
+                </span>
+              </div>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <AnimatedGlobe />
+            </motion.div>
+          </motion.div>
+        </section>
 
         <div className="divider" />
 
