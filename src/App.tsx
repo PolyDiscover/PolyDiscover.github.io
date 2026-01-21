@@ -35,21 +35,20 @@ const faqData = [
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    // Initialize from system preference
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return 'light';
+  });
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    setTheme(initialTheme);
-    document.documentElement.setAttribute('data-theme', initialTheme);
-  }, []);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   const toggleFaq = (id: number) => {
@@ -282,7 +281,7 @@ function App() {
             <motion.div className="edge-header" variants={itemVariants}>
               <h2>Global edge delivery</h2>
               <p>
-                PolyDiscover leverages Cloudflare's worldwide network to serve market data from the edge—delivering real-time Polymarket intelligence with sub-100ms latency, anywhere in the world.
+                PolyDiscover leverages Cloudflare's worldwide network to serve market data from the edge—delivering real-time Polymarket intelligence instantly, anywhere in the world.
               </p>
               <div className="edge-cta">
                 <span className="edge-badge">
