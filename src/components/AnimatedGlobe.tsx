@@ -5,9 +5,8 @@ interface GlobeProps {
 export function AnimatedGlobe({ className = '' }: GlobeProps) {
     return (
         <div className={`globe-container ${className}`}>
-            <svg aria-hidden="true" height="100%" viewBox="-1 -1 802 402" width="100%">
+            <svg aria-hidden="true" height="100%" viewBox="-1 -1 802 402" width="100%" className="globe-svg">
                 <g data-testid="globe-wireframe">
-                    <circle cx="400" cy="400" fill="#0a0a0a" r="400"></circle>
                     <path d="M 400 800 A -400 400 0 0 0 400 0" fill="none" stroke="url(#globe-gradient)" strokeWidth="1" vectorEffect="non-scaling-stroke"></path>
                     <path d="M 400 800 A -328.701 400 0 0 0 400 0" fill="none" stroke="url(#globe-gradient)" strokeWidth="1" vectorEffect="non-scaling-stroke"></path>
                     <path d="M 400 800 A -235.355 400 0 0 0 400 0" fill="none" stroke="url(#globe-gradient)" strokeWidth="1" vectorEffect="non-scaling-stroke"></path>
@@ -51,7 +50,7 @@ export function AnimatedGlobe({ className = '' }: GlobeProps) {
                                     <animate attributeName="opacity" dur="4.5s" keyTimes="0;0.167;0.333;0.5;0.667;1" repeatCount="indefinite" values="0;1;0.5;0;0;0"></animate>
                                 </circle>
                             </g>
-                            <circle cx="701.2596786376284" cy="240" fill="#000000" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
+                            <circle cx="701.2596786376284" cy="240" className="globe-node-bg" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
                             <circle cx="701.2596786376284" cy="240" fill="#3b82f6" r="5"></circle>
                         </g>
                     </g>
@@ -82,7 +81,7 @@ export function AnimatedGlobe({ className = '' }: GlobeProps) {
                                     <animate attributeName="opacity" dur="4.5s" keyTimes="0;0.167;0.333;0.5;0.667;1" repeatCount="indefinite" values="0;1;0.5;0;0;0"></animate>
                                 </circle>
                             </g>
-                            <circle cx="77.93985659667823" cy="320" fill="#000000" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
+                            <circle cx="77.93985659667823" cy="320" className="globe-node-bg" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
                             <circle cx="77.93985659667823" cy="320" fill="#3b82f6" r="5"></circle>
                         </g>
                     </g>
@@ -113,7 +112,7 @@ export function AnimatedGlobe({ className = '' }: GlobeProps) {
                                     <animate attributeName="opacity" dur="4.5s" keyTimes="0;0.167;0.333;0.5;0.667;1" repeatCount="indefinite" values="0;1;0.5;0;0;0"></animate>
                                 </circle>
                             </g>
-                            <circle cx="498.47759065022575" cy="160" fill="#000000" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
+                            <circle cx="498.47759065022575" cy="160" className="globe-node-bg" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
                             <circle cx="498.47759065022575" cy="160" fill="#3b82f6" r="5"></circle>
                         </g>
                     </g>
@@ -144,7 +143,7 @@ export function AnimatedGlobe({ className = '' }: GlobeProps) {
                                     <animate attributeName="opacity" dur="4.5s" keyTimes="0;0.167;0.333;0.5;0.667;1" repeatCount="indefinite" values="0;1;0.5;0;0;0"></animate>
                                 </circle>
                             </g>
-                            <circle cx="258.7867965644036" cy="80" fill="#000000" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
+                            <circle cx="258.7867965644036" cy="80" className="globe-node-bg" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
                             <circle cx="258.7867965644036" cy="80" fill="#3b82f6" r="5"></circle>
                         </g>
                     </g>
@@ -175,7 +174,7 @@ export function AnimatedGlobe({ className = '' }: GlobeProps) {
                                     <animate attributeName="opacity" dur="4.5s" keyTimes="0;0.167;0.333;0.5;0.667;1" repeatCount="indefinite" values="0;1;0.5;0;0;0"></animate>
                                 </circle>
                             </g>
-                            <circle cx="287.17974664711625" cy="240" fill="#000000" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
+                            <circle cx="287.17974664711625" cy="240" className="globe-node-bg" r="16" stroke="url(#globe-gradient)" vectorEffect="non-scaling-stroke"></circle>
                             <circle cx="287.17974664711625" cy="240" fill="#3b82f6" r="5"></circle>
                         </g>
                     </g>
@@ -183,8 +182,8 @@ export function AnimatedGlobe({ className = '' }: GlobeProps) {
 
                 <defs>
                     <linearGradient gradientUnits="userSpaceOnUse" id="globe-gradient" x1="0" x2="0" y1="0" y2="400">
-                        <stop offset="0%" stopColor="rgba(255,255,255,0.15)"></stop>
-                        <stop offset="100%" stopColor="rgba(255,255,255,0.08)"></stop>
+                        <stop offset="0%" className="globe-line-stop"></stop>
+                        <stop offset="100%" className="globe-line-stop-end"></stop>
                     </linearGradient>
                 </defs>
             </svg>

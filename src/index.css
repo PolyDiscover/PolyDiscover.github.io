@@ -636,9 +636,26 @@ p {
 
 /* Edge Network Section */
 .edge-section {
-  background-color: #000000;
+  background-color: var(--edge-bg);
   padding: 80px 0 40px;
   overflow: hidden;
+  --edge-bg: #f5f5f5;
+  --edge-text: #171717;
+  --edge-text-secondary: #525252;
+  --globe-bg: #e5e5e5;
+  --globe-line: rgba(0, 0, 0, 0.12);
+  --globe-line-end: rgba(0, 0, 0, 0.06);
+  --globe-node-bg: #ffffff;
+}
+
+[data-theme="dark"] .edge-section {
+  --edge-bg: #000000;
+  --edge-text: #ffffff;
+  --edge-text-secondary: #a3a3a3;
+  --globe-bg: #0a0a0a;
+  --globe-line: rgba(255, 255, 255, 0.15);
+  --globe-line-end: rgba(255, 255, 255, 0.08);
+  --globe-node-bg: #000000;
 }
 
 .edge-content {
@@ -651,12 +668,12 @@ p {
 }
 
 .edge-header h2 {
-  color: #ffffff;
+  color: var(--edge-text);
   margin-bottom: 16px;
 }
 
 .edge-header p {
-  color: #a3a3a3;
+  color: var(--edge-text-secondary);
   font-size: 1.0625rem;
   line-height: 1.7;
   margin-bottom: 24px;
@@ -692,6 +709,23 @@ p {
 .globe-svg {
   width: 100%;
   height: auto;
+}
+
+/* Globe theme-aware SVG styles */
+.globe-bg {
+  fill: var(--globe-bg);
+}
+
+.globe-node-bg {
+  fill: var(--globe-node-bg);
+}
+
+.globe-line-stop {
+  stop-color: var(--globe-line);
+}
+
+.globe-line-stop-end {
+  stop-color: var(--globe-line-end);
 }
 
 @media (max-width: 768px) {
