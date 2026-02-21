@@ -92,12 +92,12 @@
   grid-template-columns: 1fr;
   gap: 32px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 @media (min-width: 768px) {
   .lp-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -194,5 +194,15 @@
 
 .lp-btn-accent:hover {
   background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.lp-btn-chat {
+  background: #10a37f;
+  color: white;
+}
+
+.lp-btn-chat:hover {
+  background: #0d8c6d;
   transform: translateY(-1px);
 }

@@ -100,11 +100,34 @@ export function LandingPage({ theme, toggleTheme }: LandingPageProps) {
                         </Link>
                     </motion.div>
 
+                    {/* Chat Island Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                        <Link to="/chat-island" className="lp-card group block h-full text-inherit no-underline">
+                            <div className="lp-icon text-emerald-500">
+                                <svg viewBox="0 0 200 200" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="20" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M165 45 H 45 C 42.2386 45 40 47.2386 40 50 V 105" />
+                                    <path d="M40 135 H 60 L 60 160 L 105 135 H 155 C 157.761 135 160 132.761 160 130 V 75" />
+                                </svg>
+                            </div>
+                            <h3>Chat Island</h3>
+                            <p>
+                                A perfect Picture-in-Picture window for ChatGPT. Custom styling for a native app feel.
+                            </p>
+                            <div className="btn lp-btn lp-btn-chat">
+                                Open Chat
+                            </div>
+                        </Link>
+                    </motion.div>
+
                     {/* Score Island Card */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
                     >
                         <a href="/score-island/" className="lp-card group block h-full text-inherit no-underline">
                             <div className="lp-icon">

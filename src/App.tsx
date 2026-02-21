@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { LandingPage } from './pages/LandingPage';
 import { PolyDiscoverProduct } from './pages/PolyDiscoverProduct';
+import { ChatIslandProduct } from './pages/ChatIslandProduct';
 
 function App() {
     const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -25,6 +26,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<LandingPage theme={theme} toggleTheme={toggleTheme} />} />
                 <Route path="/polydiscover" element={<PolyDiscoverProduct theme={theme} toggleTheme={toggleTheme} />} />
+                <Route path="/chat-island" element={<ChatIslandProduct theme={theme} toggleTheme={toggleTheme} />} />
             </Routes>
         </Router>
     );
